@@ -1,0 +1,325 @@
+
+############## New Run ################
+params = {'max_depth': 20, 'gamma': '0.619', 'subsample': '0.50', 'reg_alpha': '0.153', 'reg_lambda': '0.017', 'learning_rate': '0.175', 'num_leaves': '200.000', 'colsample_bytree': '0.601', 'min_child_samples': '130.000', 'feature_fraction': '0.672', 'bagging_fraction': '0.890'}
+1 CV - score: 0.8876
+2 CV - score: 0.8887
+3 CV - score: 0.9086
+4 CV - score: 0.8807
+5 CV - score: 0.9097
+6 CV - score: 0.9113
+7 CV - score: 0.9088
+Total Time Run: 3.86
+Mean ROC_AUC: 0.899332552340496
+
+############## New Run ################
+params = {'max_depth': 18, 'gamma': '0.334', 'subsample': '0.70', 'reg_alpha': '0.091', 'reg_lambda': '0.154', 'learning_rate': '0.068', 'num_leaves': '100.000', 'colsample_bytree': '0.515', 'min_child_samples': '190.000', 'feature_fraction': '0.756', 'bagging_fraction': '0.469'}
+1 CV - score: 0.8978
+2 CV - score: 0.8995
+3 CV - score: 0.9189
+4 CV - score: 0.8934
+5 CV - score: 0.926
+6 CV - score: 0.9254
+7 CV - score: 0.9196
+Total Time Run: 4.92
+Mean ROC_AUC: 0.9115355393437691
+
+############## New Run ################
+params = {'max_depth': 12, 'gamma': '0.133', 'subsample': '0.40', 'reg_alpha': '0.055', 'reg_lambda': '0.281', 'learning_rate': '0.124', 'num_leaves': '240.000', 'colsample_bytree': '0.516', 'min_child_samples': '220.000', 'feature_fraction': '0.629', 'bagging_fraction': '0.672'}
+1 CV - score: 0.884
+2 CV - score: 0.876
+3 CV - score: 0.9078
+4 CV - score: 0.877
+5 CV - score: 0.9134
+6 CV - score: 0.9079
+7 CV - score: 0.9068
+Total Time Run: 2.78
+Mean ROC_AUC: 0.8961383305900734
+
+############## New Run ################
+params = {'max_depth': 12, 'gamma': '0.460', 'subsample': '0.50', 'reg_alpha': '0.133', 'reg_lambda': '0.156', 'learning_rate': '0.151', 'num_leaves': '60.000', 'colsample_bytree': '0.611', 'min_child_samples': '100.000', 'feature_fraction': '0.604', 'bagging_fraction': '0.705'}
+1 CV - score: 0.8864
+2 CV - score: 0.888
+3 CV - score: 0.9071
+4 CV - score: 0.8806
+5 CV - score: 0.9127
+6 CV - score: 0.9076
+7 CV - score: 0.9119
+Total Time Run: 2.68
+Mean ROC_AUC: 0.8991665276319598
+
+############## New Run ################
+params = {'max_depth': 21, 'gamma': '0.207', 'subsample': '0.60', 'reg_alpha': '0.133', 'reg_lambda': '0.069', 'learning_rate': '0.047', 'num_leaves': '150.000', 'colsample_bytree': '0.603', 'min_child_samples': '110.000', 'feature_fraction': '0.462', 'bagging_fraction': '0.605'}
+1 CV - score: 0.898
+2 CV - score: 0.9019
+3 CV - score: 0.9226
+4 CV - score: 0.8964
+5 CV - score: 0.9289
+6 CV - score: 0.9252
+7 CV - score: 0.9215
+Total Time Run: 7.4
+Mean ROC_AUC: 0.9134855971150175
+
+############## New Run ################
+params = {'max_depth': 11, 'gamma': '0.364', 'subsample': '0.60', 'reg_alpha': '0.070', 'reg_lambda': '0.242', 'learning_rate': '0.073', 'num_leaves': '30.000', 'colsample_bytree': '0.523', 'min_child_samples': '190.000', 'feature_fraction': '0.738', 'bagging_fraction': '0.584'}
+1 CV - score: 0.8942
+2 CV - score: 0.8943
+3 CV - score: 0.9158
+4 CV - score: 0.889
+5 CV - score: 0.9224
+6 CV - score: 0.9188
+7 CV - score: 0.9183
+Total Time Run: 2.8
+Mean ROC_AUC: 0.907548201150358
+
+############## New Run ################
+params = {'max_depth': 21, 'gamma': '0.692', 'subsample': '0.80', 'reg_alpha': '0.173', 'reg_lambda': '0.283', 'learning_rate': '0.195', 'num_leaves': '80.000', 'colsample_bytree': '0.543', 'min_child_samples': '200.000', 'feature_fraction': '0.521', 'bagging_fraction': '0.440'}
+1 CV - score: 0.8941
+2 CV - score: 0.8917
+3 CV - score: 0.9188
+4 CV - score: 0.8895
+5 CV - score: 0.9214
+6 CV - score: 0.9189
+7 CV - score: 0.915
+Total Time Run: 4.73
+Mean ROC_AUC: 0.9070598049876655
+
+############## New Run ################
+params = {'max_depth': 16, 'gamma': '0.631', 'subsample': '0.50', 'reg_alpha': '0.250', 'reg_lambda': '0.159', 'learning_rate': '0.134', 'num_leaves': '60.000', 'colsample_bytree': '0.776', 'min_child_samples': '210.000', 'feature_fraction': '0.438', 'bagging_fraction': '0.606'}
+1 CV - score: 0.8883
+2 CV - score: 0.8864
+3 CV - score: 0.9111
+4 CV - score: 0.8871
+5 CV - score: 0.9155
+6 CV - score: 0.9147
+7 CV - score: 0.9117
+Total Time Run: 3.4
+Mean ROC_AUC: 0.9021257227311036
+
+############## New Run ################
+params = {'max_depth': 10, 'gamma': '0.687', 'subsample': '0.90', 'reg_alpha': '0.177', 'reg_lambda': '0.160', 'learning_rate': '0.175', 'num_leaves': '200.000', 'colsample_bytree': '0.721', 'min_child_samples': '240.000', 'feature_fraction': '0.787', 'bagging_fraction': '0.547'}
+1 CV - score: 0.8933
+2 CV - score: 0.8898
+3 CV - score: 0.91
+4 CV - score: 0.8852
+5 CV - score: 0.9202
+6 CV - score: 0.9165
+7 CV - score: 0.9113
+Total Time Run: 2.13
+Mean ROC_AUC: 0.9037475371821376
+
+############## New Run ################
+params = {'max_depth': 21, 'gamma': '0.558', 'subsample': '0.60', 'reg_alpha': '0.108', 'reg_lambda': '0.114', 'learning_rate': '0.174', 'num_leaves': '190.000', 'colsample_bytree': '0.572', 'min_child_samples': '220.000', 'feature_fraction': '0.577', 'bagging_fraction': '0.854'}
+1 CV - score: 0.8913
+2 CV - score: 0.8884
+3 CV - score: 0.9102
+4 CV - score: 0.8853
+5 CV - score: 0.9137
+6 CV - score: 0.9135
+7 CV - score: 0.9079
+Total Time Run: 4.68
+Mean ROC_AUC: 0.901461416796132
+
+############## New Run ################
+params = {'max_depth': 15, 'gamma': '0.367', 'subsample': '0.60', 'reg_alpha': '0.035', 'reg_lambda': '0.162', 'learning_rate': '0.054', 'num_leaves': '30.000', 'colsample_bytree': '0.723', 'min_child_samples': '110.000', 'feature_fraction': '0.753', 'bagging_fraction': '0.447'}
+1 CV - score: 0.8984
+2 CV - score: 0.8955
+3 CV - score: 0.9224
+4 CV - score: 0.8963
+5 CV - score: 0.9264
+6 CV - score: 0.9226
+7 CV - score: 0.9218
+Total Time Run: 4.34
+Mean ROC_AUC: 0.9118923454854253
+
+############## New Run ################
+params = {'max_depth': 18, 'gamma': '0.648', 'subsample': '0.20', 'reg_alpha': '0.348', 'reg_lambda': '0.174', 'learning_rate': '0.050', 'num_leaves': '190.000', 'colsample_bytree': '0.807', 'min_child_samples': '100.000', 'feature_fraction': '0.469', 'bagging_fraction': '0.632'}
+1 CV - score: 0.8864
+2 CV - score: 0.8894
+3 CV - score: 0.9138
+4 CV - score: 0.8829
+5 CV - score: 0.9167
+6 CV - score: 0.9098
+7 CV - score: 0.9077
+Total Time Run: 4.09
+Mean ROC_AUC: 0.9009591996148594
+
+############## New Run ################
+params = {'max_depth': 23, 'gamma': '0.425', 'subsample': '0.20', 'reg_alpha': '0.388', 'reg_lambda': '0.391', 'learning_rate': '0.119', 'num_leaves': '130.000', 'colsample_bytree': '0.780', 'min_child_samples': '150.000', 'feature_fraction': '0.737', 'bagging_fraction': '0.436'}
+1 CV - score: 0.8703
+2 CV - score: 0.8729
+3 CV - score: 0.8999
+4 CV - score: 0.8645
+5 CV - score: 0.9026
+6 CV - score: 0.8936
+7 CV - score: 0.9019
+Total Time Run: 9.21
+Mean ROC_AUC: 0.8865138979837599
+
+############## New Run ################
+params = {'max_depth': 19, 'gamma': '0.044', 'subsample': '0.70', 'reg_alpha': '0.191', 'reg_lambda': '0.100', 'learning_rate': '0.094', 'num_leaves': '50.000', 'colsample_bytree': '0.373', 'min_child_samples': '100.000', 'feature_fraction': '0.566', 'bagging_fraction': '0.701'}
+1 CV - score: 0.8998
+2 CV - score: 0.8958
+3 CV - score: 0.9199
+4 CV - score: 0.8951
+5 CV - score: 0.9239
+6 CV - score: 0.9239
+7 CV - score: 0.9226
+Total Time Run: 4.74
+Mean ROC_AUC: 0.9115535634823854
+
+############## New Run ################
+params = {'max_depth': 11, 'gamma': '0.028', 'subsample': '0.20', 'reg_alpha': '0.019', 'reg_lambda': '0.307', 'learning_rate': '0.153', 'num_leaves': '210.000', 'colsample_bytree': '0.509', 'min_child_samples': '180.000', 'feature_fraction': '0.709', 'bagging_fraction': '0.823'}
+1 CV - score: 0.8542
+2 CV - score: 0.859
+3 CV - score: 0.8839
+4 CV - score: 0.8508
+5 CV - score: 0.891
+6 CV - score: 0.8723
+7 CV - score: 0.8834
+Total Time Run: 2.31
+Mean ROC_AUC: 0.8706598554813666
+
+############## New Run ################
+params = {'max_depth': 21, 'gamma': '0.561', 'subsample': '0.20', 'reg_alpha': '0.211', 'reg_lambda': '0.241', 'learning_rate': '0.017', 'num_leaves': '120.000', 'colsample_bytree': '0.778', 'min_child_samples': '220.000', 'feature_fraction': '0.520', 'bagging_fraction': '0.587'}
+1 CV - score: 0.8928
+2 CV - score: 0.8988
+3 CV - score: 0.9184
+4 CV - score: 0.8933
+5 CV - score: 0.9252
+6 CV - score: 0.9193
+7 CV - score: 0.9126
+Total Time Run: 6.74
+Mean ROC_AUC: 0.9086393329206433
+
+############## New Run ################
+params = {'max_depth': 21, 'gamma': '0.257', 'subsample': '0.60', 'reg_alpha': '0.318', 'reg_lambda': '0.066', 'learning_rate': '0.057', 'num_leaves': '160.000', 'colsample_bytree': '0.481', 'min_child_samples': '180.000', 'feature_fraction': '0.731', 'bagging_fraction': '0.794'}
+1 CV - score: 0.8975
+2 CV - score: 0.901
+3 CV - score: 0.92
+4 CV - score: 0.8981
+5 CV - score: 0.9264
+6 CV - score: 0.9254
+7 CV - score: 0.9237
+Total Time Run: 7.13
+Mean ROC_AUC: 0.9131699171937007
+
+############## New Run ################
+params = {'max_depth': 17, 'gamma': '0.268', 'subsample': '0.50', 'reg_alpha': '0.162', 'reg_lambda': '0.143', 'learning_rate': '0.156', 'num_leaves': '70.000', 'colsample_bytree': '0.423', 'min_child_samples': '110.000', 'feature_fraction': '0.672', 'bagging_fraction': '0.544'}
+1 CV - score: 0.889
+2 CV - score: 0.89
+3 CV - score: 0.9083
+4 CV - score: 0.8792
+5 CV - score: 0.9144
+6 CV - score: 0.9088
+7 CV - score: 0.9084
+Total Time Run: 3.36
+Mean ROC_AUC: 0.8997446547860892
+
+############## New Run ################
+params = {'max_depth': 12, 'gamma': '0.173', 'subsample': '0.80', 'reg_alpha': '0.377', 'reg_lambda': '0.373', 'learning_rate': '0.038', 'num_leaves': '230.000', 'colsample_bytree': '0.430', 'min_child_samples': '130.000', 'feature_fraction': '0.558', 'bagging_fraction': '0.764'}
+1 CV - score: 0.8999
+2 CV - score: 0.9036
+3 CV - score: 0.9226
+4 CV - score: 0.8988
+5 CV - score: 0.9317
+6 CV - score: 0.9281
+7 CV - score: 0.9267
+Total Time Run: 3.66
+Mean ROC_AUC: 0.9159193130864838
+
+############## New Run ################
+params = {'max_depth': 7, 'gamma': '0.189', 'subsample': '0.20', 'reg_alpha': '0.069', 'reg_lambda': '0.358', 'learning_rate': '0.052', 'num_leaves': '40.000', 'colsample_bytree': '0.784', 'min_child_samples': '150.000', 'feature_fraction': '0.658', 'bagging_fraction': '0.500'}
+1 CV - score: 0.8826
+2 CV - score: 0.8884
+3 CV - score: 0.9098
+4 CV - score: 0.8831
+5 CV - score: 0.9191
+6 CV - score: 0.9137
+7 CV - score: 0.9083
+Total Time Run: 1.43
+Mean ROC_AUC: 0.9007280706295336
+
+############## New Run ################
+params = {'max_depth': 8, 'gamma': '0.110', 'subsample': '0.80', 'reg_alpha': '0.265', 'reg_lambda': '0.039', 'learning_rate': '0.011', 'num_leaves': '230.000', 'colsample_bytree': '0.314', 'min_child_samples': '120.000', 'feature_fraction': '0.418', 'bagging_fraction': '0.766'}
+1 CV - score: 0.9028
+2 CV - score: 0.9105
+3 CV - score: 0.9178
+4 CV - score: 0.8917
+5 CV - score: 0.9157
+6 CV - score: 0.9073
+7 CV - score: 0.904
+Total Time Run: 2.02
+Mean ROC_AUC: 0.9071153009580802
+
+############## New Run ################
+params = {'max_depth': 14, 'gamma': '0.206', 'subsample': '0.80', 'reg_alpha': '0.269', 'reg_lambda': '0.393', 'learning_rate': '0.031', 'num_leaves': '150.000', 'colsample_bytree': '0.646', 'min_child_samples': '230.000', 'feature_fraction': '0.486', 'bagging_fraction': '0.738'}
+1 CV - score: 0.9013
+2 CV - score: 0.9048
+3 CV - score: 0.9224
+4 CV - score: 0.8981
+5 CV - score: 0.9324
+6 CV - score: 0.9297
+7 CV - score: 0.9278
+Total Time Run: 5.0
+Mean ROC_AUC: 0.916642150183196
+
+############## New Run ################
+params = {'max_depth': 14, 'gamma': '0.112', 'subsample': '0.80', 'reg_alpha': '0.380', 'reg_lambda': '0.394', 'learning_rate': '0.028', 'num_leaves': '140.000', 'colsample_bytree': '0.679', 'min_child_samples': '130.000', 'feature_fraction': '0.518', 'bagging_fraction': '0.745'}
+1 CV - score: 0.9015
+2 CV - score: 0.9037
+3 CV - score: 0.9255
+4 CV - score: 0.9002
+5 CV - score: 0.9332
+6 CV - score: 0.9301
+7 CV - score: 0.9271
+Total Time Run: 5.2
+Mean ROC_AUC: 0.9173297119346463
+
+############## New Run ################
+params = {'max_depth': 14, 'gamma': '0.066', 'subsample': '0.80', 'reg_alpha': '0.303', 'reg_lambda': '0.333', 'learning_rate': '0.021', 'num_leaves': '140.000', 'colsample_bytree': '0.876', 'min_child_samples': '170.000', 'feature_fraction': '0.516', 'bagging_fraction': '0.726'}
+1 CV - score: 0.901
+2 CV - score: 0.9074
+3 CV - score: 0.9259
+4 CV - score: 0.9028
+5 CV - score: 0.9333
+6 CV - score: 0.9311
+7 CV - score: 0.9282
+Total Time Run: 5.85
+Mean ROC_AUC: 0.9185328382321049
+
+############## New Run ################
+params = {'max_depth': 14, 'gamma': '0.071', 'subsample': '0.80', 'reg_alpha': '0.312', 'reg_lambda': '0.348', 'learning_rate': '0.093', 'num_leaves': '140.000', 'colsample_bytree': '0.897', 'min_child_samples': '170.000', 'feature_fraction': '0.516', 'bagging_fraction': '0.877'}
+1 CV - score: 0.8983
+2 CV - score: 0.8971
+3 CV - score: 0.9206
+4 CV - score: 0.8967
+5 CV - score: 0.9271
+6 CV - score: 0.9241
+7 CV - score: 0.9234
+Total Time Run: 3.72
+Mean ROC_AUC: 0.9124628805425473
+
+############## New Run ################
+params = {'max_depth': 14, 'gamma': '0.099', 'subsample': '0.40', 'reg_alpha': '0.353', 'reg_lambda': '0.325', 'learning_rate': '0.024', 'num_leaves': '140.000', 'colsample_bytree': '0.885', 'min_child_samples': '170.000', 'feature_fraction': '0.497', 'bagging_fraction': '0.666'}
+1 CV - score: 0.8965
+2 CV - score: 0.9024
+3 CV - score: 0.9225
+4 CV - score: 0.9006
+5 CV - score: 0.9302
+6 CV - score: 0.9263
+7 CV - score: 0.9246
+Total Time Run: 4.62
+Mean ROC_AUC: 0.9147369119915025
+
+############## New Run ################
+params = {'max_depth': 9, 'gamma': '0.277', 'subsample': '0.80', 'reg_alpha': '0.299', 'reg_lambda': '0.222', 'learning_rate': '0.082', 'num_leaves': '170.000', 'colsample_bytree': '0.848', 'min_child_samples': '140.000', 'feature_fraction': '0.547', 'bagging_fraction': '0.828'}
+1 CV - score: 0.8952
+2 CV - score: 0.8949
+3 CV - score: 0.917
+4 CV - score: 0.8928
+5 CV - score: 0.9243
+6 CV - score: 0.9231
+7 CV - score: 0.917
+Total Time Run: 2.03
+Mean ROC_AUC: 0.9091831602242679
+100%|| 27/27 [1:54:53<00:00, 223.67s/it, best loss: -0.9185328382321049]

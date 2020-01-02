@@ -39,6 +39,9 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score, KFold
 # Importing the classifier for classfying the frauds and valid transactions
 from xgboost import XGBClassifier
 import xgboost as xgb
+import os
+
+os.chdir(r'C:\Users\ks20092693\Fraud-transaction-detection')
 
 ## Hyperopt modules
 # Hyperopt modules are used to perform bayesian optimization which is a probabilitic model approach to find
@@ -48,16 +51,6 @@ from hyperopt import fmin, hp, tpe, Trials, space_eval, STATUS_OK, STATUS_RUNNIN
 from functools import partial 
 # Importing the garbage collector
 import gc
-
-# Mounting the drive and getting the dataset
-from google.colab import drive
-drive.mount('/content/drive')
-!ls '/content/drive/My Drive/ieee-fraud-detection'
-
-# In this section, I am importing the dataset.
-transactions = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/train_transaction.csv')
-identity = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/train_identity.csv')
-
 
 
 # In this section, I create a few functions to help us.
@@ -137,21 +130,17 @@ def CalcOutliers(df_num):
     
     return
 
-df_trans = reduce_mem_usage(transactions)
-df_id = reduce_mem_usage(identity)
 
-del transactions
-del identity
 
-"""Modelling"""
+'''Modelling'''
 
-df_trans = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/train_transaction.csv')
-df_test_trans = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/test_transaction.csv')
+df_trans = pd.read_csv('train_transaction.csv')
+df_test_trans = pd.read_csv('test_transaction.csv')
 
-df_id = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/train_identity.csv')
-df_test_id = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/test_identity.csv')
+df_id = pd.read_csv('train_identity.csv')
+df_test_id = pd.read_csv('test_identity.csv')
 
-sample_submission = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/sample_submission.csv', index_col='TransactionID')
+sample_submission = pd.read_csv('sample_submission.csv', index_col='TransactionID')
 
 df_train = df_trans.merge(df_id, how='left', left_index=True, right_index=True, on='TransactionID')
 df_test = df_test_trans.merge(df_test_id, how='left', left_index=True, right_index=True, on='TransactionID')
@@ -159,12 +148,22 @@ df_test = df_test_trans.merge(df_test_id, how='left', left_index=True, right_ind
 print(df_train.shape)
 print(df_test.shape)
 
+temp = pd.DataFrame()
+temp = df_train.merge(df_test, left_on='TransactionID', right_on='TransactionID', how='inner')
+print(df_train.columns)
+print(df_test.columns)
+
+
 # y_train = df_train['isFraud'].copy()
 del df_trans, df_id, df_test_trans, df_test_id
 
+# Reducing memory
 df_train = reduce_mem_usage(df_train)
 df_test = reduce_mem_usage(df_test)
 
+
+
+# Mapping emails
 emails = {'gmail': 'google', 'att.net': 'att', 'twc.com': 'spectrum', 
           'scranton.edu': 'other', 'optonline.net': 'other', 'hotmail.co.uk': 'microsoft',
           'comcast.net': 'other', 'yahoo.com.mx': 'yahoo', 'yahoo.fr': 'yahoo',
@@ -197,26 +196,19 @@ for c in ['P_emaildomain', 'R_emaildomain']:
     
     df_train[c + '_suffix'] = df_train[c + '_suffix'].map(lambda x: x if str(x) not in us_emails else 'us')
     df_test[c + '_suffix'] = df_test[c + '_suffix'].map(lambda x: x if str(x) not in us_emails else 'us')
-
-# df_train['id_03'].dtype
-# for f in df_train.drop('isFraud', axis=1).columns:
-#   type(f)
-
-# print(df_train['id_01'])
-print(df_test['id-01'])
-
-for f in df_train.drop('isFraud', axis=1).columns:
-    if df_train[f].dtype == 'object': 
-        lbl = preprocessing.LabelEncoder()
-        lbl.fit(list(df_train[f].values))
-        df_train[f] = lbl.transform(list(df_train[f].values))
     
-# for f in df_test.columns:
-#      if df_test[f].dtype == 'object':
-#         lbl = preprocessing.LabelEncoder()
-#         lbl.fit(list(df_test[f].values))
-#         df_test[f] = lbl.transform(list(df_test[f].values))
+    
 
+# Label encoding
+for f in df_train.drop('isFraud', axis=1).columns:
+   if df_train[f].dtype=='object' or df_test[f].dtype=='object': 
+        lbl = preprocessing.LabelEncoder()
+        lbl.fit(list(df_train[f].values) + list(df_test[f].values))
+        df_train[f] = lbl.transform(list(df_train[f].values))
+        df_test[f] = lbl.transform(list(df_test[f].values))   
+        
+
+# Feature Engineering
 df_train['Trans_min_mean'] = df_train['TransactionAmt'] - df_train['TransactionAmt'].mean()
 df_train['Trans_min_std'] = df_train['Trans_min_mean'] / df_train['TransactionAmt'].std()
 df_test['Trans_min_mean'] = df_test['TransactionAmt'] - df_test['TransactionAmt'].mean()
@@ -232,6 +224,7 @@ df_test['TransactionAmt_to_mean_card4'] = df_test['TransactionAmt'] / df_test.gr
 df_test['TransactionAmt_to_std_card1'] = df_test['TransactionAmt'] / df_test.groupby(['card1'])['TransactionAmt'].transform('std')
 df_test['TransactionAmt_to_std_card4'] = df_test['TransactionAmt'] / df_test.groupby(['card4'])['TransactionAmt'].transform('std')
 
+
 df_train['TransactionAmt'] = np.log(df_train['TransactionAmt'])
 df_test['TransactionAmt'] = np.log(df_test['TransactionAmt'])
 
@@ -239,6 +232,7 @@ df_test['isFraud'] = 'test'
 df = pd.concat([df_train, df_test], axis=0, sort=False )
 df = df.reset_index()
 df = df.drop('index', axis=1)
+
 
 def PCA_change(df, cols, n_components, prefix='PCA_', rand_seed=4):
     pca = PCA(n_components=n_components, random_state=rand_seed)
@@ -255,6 +249,7 @@ def PCA_change(df, cols, n_components, prefix='PCA_', rand_seed=4):
     
     return df
 
+
 mas_v = df_train.columns[55:394]
 
 from sklearn.preprocessing import minmax_scale
@@ -268,9 +263,19 @@ for col in mas_v:
     
 df = PCA_change(df, mas_v, prefix='PCA_V_', n_components=30)
 
+df = reduce_mem_usage(df)
+
+
 df_train, df_test = df[df['isFraud'] != 'test'], df[df['isFraud'] == 'test'].drop('isFraud', axis=1)
 
-X_train = df_train.sort_values('TransactionDT')
+df_train.shape
+
+
+X_train = df_train.sort_values('TransactionDT').drop(['isFraud', 
+                                                      'TransactionDT', 
+                                                      #'Card_ID'
+                                                     ],
+                                                     axis=1)
 y_train = df_train.sort_values('TransactionDT')['isFraud'].astype(bool)
 
 X_test = df_test.sort_values('TransactionDT').drop(['TransactionDT',
@@ -279,14 +284,6 @@ X_test = df_test.sort_values('TransactionDT').drop(['TransactionDT',
                                                    axis=1)
 del df_train
 df_test = df_test[["TransactionDT"]]
-
-X_train.to_csv(path_or_buf='/content/drive/My Drive/ieee-fraud-detection/FinalTrainingSet.csv')
-
-for f in X_train.columns:
-  if f=='id-01':
-    print(True)
-
-X_train.memory_usage().sum()/1024**2
 
 from sklearn.model_selection import KFold,TimeSeriesSplit
 from sklearn.metrics import roc_auc_score
@@ -410,6 +407,8 @@ space = {
     # The frequency controls how often (iteration) bagging is used. Smaller
     # fractions and frequencies reduce overfitting.
 }
+
+
 
 # Set algoritm parameters
 best = fmin(fn=objective,
