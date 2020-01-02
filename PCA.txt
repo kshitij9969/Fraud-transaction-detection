@@ -1,0 +1,11 @@
+1. Does reducing dimensions affect the accuracy of the model?
+2. Is there ever a case where we absolutely need to factor in a variable but PCA excludes it?
+3. How does independence of variables impact performance? Why is it necessary to make variables independent?
+4. What is the matrix called and how do we make it? What are its dimensions?
+5. How do we break down the matrix into two components?
+6. 
+
+
+
+
+
