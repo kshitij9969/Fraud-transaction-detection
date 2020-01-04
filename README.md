@@ -1,6 +1,12 @@
 # Fraud-transaction-detection
 Predicting fraud transactions using Gradient boost classifier
 
+The problem is from a Kaggle competition - IEEE fraud transaction detection
+
+You can download the dataset from here:
+
+https://www.kaggle.com/c/14242/download-all
+
 This repository contains python code for fraud transaction detection.
 
 For the sake of comparision, I have used automl to train the model. The results are in GoogleCloudAutoML.csv file. 
