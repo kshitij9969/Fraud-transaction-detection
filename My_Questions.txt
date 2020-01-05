@@ -1,8 +1,0 @@
-Read about:
-1. Principal component analysis
-2. Need to add a column of mean and std
-3. Hyperopt function
-4. 
-
-Questions:
-1. What is **param and *param? where to use them? and what is the difference?
