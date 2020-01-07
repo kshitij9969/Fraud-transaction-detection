@@ -5,6 +5,7 @@ The problem is from a Kaggle competition - IEEE fraud transaction detection
 
 XGBoost Classifier: 
 Score - 0.933408 Rank - 65
+Auto ML
 Score - 0.928402 Rank - 547
 
 
