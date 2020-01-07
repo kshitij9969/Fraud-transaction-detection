@@ -10,7 +10,7 @@ This python code uses gradient boost to classify transactions as fraud or valid.
 Hyper optimization is used to find the best hyper parameters for the classifier.
 """
 
-# Importing all required libraries.
+#### Importing all required libraries.
 import numpy as np
 import pandas as pd
 
@@ -30,7 +30,7 @@ import xgboost as xgb
 # the minimum of a function.
 from hyperopt import fmin, hp, tpe, Trials, space_eval, STATUS_OK, STATUS_RUNNING
 
-# Mounting the drive and getting the dataset
+#### Mounting the drive and getting the dataset
 
 '''from google.colab import drive
 drive.mount('/content/drive')
@@ -56,7 +56,7 @@ sample_submission = pd.read_csv('/content/drive/My Drive/ieee-fraud-detection/sa
 train_data = transactions.merge(identity, how='left', left_index=True, right_index=True, on='TransactionID')
 test_data = transactions_test.merge(identity_test, how='left', left_index=True, right_index=True, on='TransactionID')
 
-# Mapping emails
+#### Mapping emails
 emails = {'gmail': 'google', 'att.net': 'att', 'twc.com': 'spectrum', 
           'scranton.edu': 'other', 'optonline.net': 'other', 'hotmail.co.uk': 'microsoft',
           'comcast.net': 'other', 'yahoo.com.mx': 'yahoo', 'yahoo.fr': 'yahoo',
@@ -79,18 +79,17 @@ emails = {'gmail': 'google', 'att.net': 'att', 'twc.com': 'spectrum',
 
 us_emails = ['gmail', 'net', 'edu']
 
-# https://www.kaggle.com/c/ieee-fraud-detection/discussion/100499#latest-579654
-for c in ['P_emaildomain', 'R_emaildomain']:
-    train_data[c + '_bin'] = train_data[c].map(emails)
-    test_data[c + '_bin'] = test_data[c].map(emails)
+for email in ['P_emaildomain', 'R_emaildomain']:
+    train_data[email + '_bin'] = train_data[email].map(emails)
+    test_data[email + '_bin'] = test_data[email].map(emails)
     
-    train_data[c + '_suffix'] = train_data[c].map(lambda x: str(x).split('.')[-1])
-    test_data[c + '_suffix'] = test_data[c].map(lambda x: str(x).split('.')[-1])
+    train_data[email + '_suffix'] = train_data[email].map(lambda x: str(x).split('.')[-1])
+    test_data[email + '_suffix'] = test_data[email].map(lambda x: str(x).split('.')[-1])
     
-    train_data[c + '_suffix'] = train_data[c + '_suffix'].map(lambda x: x if str(x) not in us_emails else 'us')
-    test_data[c + '_suffix'] = test_data[c + '_suffix'].map(lambda x: x if str(x) not in us_emails else 'us')
+    train_data[email + '_suffix'] = train_data[email + '_suffix'].map(lambda x: x if str(x) not in us_emails else 'us')
+    test_data[email + '_suffix'] = test_data[email + '_suffix'].map(lambda x: x if str(x) not in us_emails else 'us')
 
-# Label encoding
+#### Label encoding
 for col in train_data.drop('isFraud', axis=1).columns:
    if train_data[col].dtype=='object' or test_data[col].dtype=='object': 
         lbl = preprocessing.LabelEncoder()
