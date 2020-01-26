@@ -217,8 +217,6 @@ clf.fit(X_train, y_train)
 
 y_preds = clf.predict_proba(X_test)[:,1]
 
-y_preds
-
 results = pd.DataFrame(y_preds)
 
 results.to_csv(path_or_buf='/content/results.csv')
